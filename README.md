@@ -1,5 +1,57 @@
-# Vue 3 + TypeScript + Vite
+# Book Search Engine
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A modern search interface for Project Gutenberg books using TF-IDF ranking.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Features
+- Fast and accurate book search using the TF-IDF algorithm
+- Clean, responsive UI with dark/light theme support
+- Real-time search results with relevance scoring
+- Book indexing capabilities
+- Built with Vue 3 + TypeScript
+
+## Tech Stack
+- **Vue 3** (Composition API)
+- **TypeScript**
+- **Tailwind CSS**
+- **Vite**
+- **Pinia** for state management
+
+## Getting Started
+
+### Prerequisites
+- Node.js 16+
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/book-search.git
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+## Project Structure
+
+```
+/src
+ ├── /components   # Reusable Vue components
+ ├── /pages        # Page components
+ ├── /stores       # Pinia stores
+ ├── /types        # TypeScript type definitions
+ ├── /styles       # Global styles and theme
+ └── /utils        # Utility functions
+```
