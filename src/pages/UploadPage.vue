@@ -5,11 +5,12 @@ import { useToast } from 'vue-toastification'
 import UploadForm from '@/components/upload/UploadForm.vue'
 import ProcessingStatus from '@/components/upload/ProcessingStatus.vue'
 import { config } from '@/config'
+import type { UploadResult } from '@/types/upload'
 
 const toast = useToast()
 const isProcessing = ref(false)
 const bookId = ref('')
-const result = ref(null)
+const result = ref<UploadResult | null>(null)
 
 const handleUpload = async () => {
   if (!bookId.value) {

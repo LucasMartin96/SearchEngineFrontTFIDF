@@ -23,6 +23,9 @@ export const useThemeStore = defineStore('theme', {
   actions: {
     initTheme() {
       this.currentTheme = 'scifi'
+    },
+    setTheme(theme: ThemeType) {
+      this.currentTheme = theme
     }
   }
 })
