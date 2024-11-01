@@ -8,9 +8,9 @@ services:
       - key: VITE_API_URL
         value: https://searchengine-h77b.onrender.com/api
       - key: VITE_FRONTEND_REPO_URL
-        value: https://github.com/yourusername/search_engine_fe
+        value: https://github.com/LucasMartin96/SearchEngineFrontTFIDF 
       - key: VITE_BACKEND_REPO_URL
-        value: https://github.com/yourusername/search_engine_be
+        value: https://github.com/LucasMartin96/SearchEngineTFIDF
     headers:
       - path: /*
         name: Cache-Control
