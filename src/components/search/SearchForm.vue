@@ -13,7 +13,7 @@ defineEmits<{
 <template>
   <div class="max-w-3xl mx-auto mb-12">
     <div class="bg-theme-background-secondary p-6 rounded-lg shadow-lg">
-      <div class="flex gap-4">
+      <div class="flex flex-col sm:flex-row gap-4">
         <input
           :value="searchQuery"
           @input="e => $emit('update:searchQuery', (e.target as HTMLInputElement).value)"
