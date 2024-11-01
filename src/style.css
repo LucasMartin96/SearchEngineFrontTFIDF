@@ -1,0 +1,94 @@
+/* Import fonts first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Crimson+Pro:wght@400;500;600;700&family=Chakra+Petch:wght@400;500;600;700&family=Space+Mono&display=swap');
+
+/* Then Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #2D3748;           /* Deep blue-gray for text */
+    --color-secondary: #4299E1;         /* Modern blue */
+    --color-accent: #667EEA;           /* Vibrant indigo */
+    --color-background: #FFFFFF;        /* Clean white */
+    --color-background-secondary: #F7FAFC; /* Subtle gray background */
+    --color-navbar: #FFFFFF;            /* White navbar */
+    --font-heading: 'Space Grotesk';    /* Modern geometric font */
+    --font-body: 'Inter';               /* Clean, readable font */
+    --color-secondary-rgb: 66, 153, 225;  /* Blue in RGB */
+    --color-accent-rgb: 102, 126, 234;    /* Indigo in RGB */
+  }
+
+  /* Classic theme */
+  .classic {
+    --color-primary: #2C1810;           /* Rich brown for text */
+    --color-secondary: #8B4513;         /* Saddle brown */
+    --color-accent: #A0522D;           /* Sienna accent */
+    --color-background: #FDF5E6;        /* Old lace background */
+    --color-background-secondary: #FAF3E3; /* Antique white */
+    --color-navbar: #5C4033;            /* Deeper brown navbar */
+    --font-heading: 'Crimson Pro';      /* Elegant serif */
+    --font-body: 'Crimson Pro';         /* Matching serif */
+    --color-secondary-rgb: 139, 69, 19;   /* Saddle brown in RGB */
+    --color-accent-rgb: 160, 82, 45;      /* Sienna in RGB */
+  }
+
+  /* Sci-fi theme */
+  .scifi {
+    --color-primary: #FFFFFF;          /* Stark white for text */
+    --color-secondary: #2AC144;        /* Death Star green (screen color) */
+    --color-accent: #FF2400;           /* Warning red */
+    --color-background: #222222;       /* Space station gray */
+    --color-background-secondary: #333333; /* Lighter station gray */
+    --color-navbar: #111111;           /* Darker gray for navbar */
+    --font-heading: 'Chakra Petch';
+    --font-body: 'Space Mono';
+    --color-secondary-rgb: 42, 193, 68;   /* Death Star green */
+    --color-accent-rgb: 255, 36, 0;       /* Warning red */
+  }
+
+  body {
+    @apply bg-theme-background text-theme-primary transition-all duration-200 font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+
+  /* Font size utilities */
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-lg transition-all duration-200 font-medium inline-flex items-center gap-2;
+    font-family: var(--font-heading), sans-serif;
+  }
+  
+  .btn-primary {
+    @apply bg-theme-secondary text-white hover:bg-theme-accent shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-theme-navbar text-white hover:bg-theme-accent shadow-lg;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
