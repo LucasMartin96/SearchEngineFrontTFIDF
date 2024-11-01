@@ -19,6 +19,26 @@
       You can just throw a book ID at it from Project Gutenberg, and it downloads and processes everything automatically. 
       No more copy-pasting stuff! And when you search, it gives you results ordered by how relevant they actually are, not just random matches.
     </p>
+
+    <!-- New Disclaimer Section -->
+    <div 
+      class="mb-8 p-4 bg-theme-accent/10 rounded-lg border border-theme-accent/20"
+      v-motion
+      :initial="{ opacity: 0, scale: 0.95 }"
+      :enter="{ opacity: 1, scale: 1 }"
+      :delay="600"
+    >
+      <p class="text-sm font-body flex items-center justify-center gap-2 mb-2">
+        <span class="animate-spin">🌟</span>
+        <span class="font-semibold">Free Tier Adventure Notice!</span>
+        <span class="animate-spin">🌟</span>
+      </p>
+      <p class="text-sm font-body italic">
+        Running on free-tier servers, so it might be a bit slow... Think of it as adding dramatic suspense to your literary journey! 
+        <span class="inline-block animate-bounce">🐌✨</span>
+      </p>
+    </div>
+
     <div class="flex flex-col items-center gap-6">
       <RouterLink 
         to="/search" 
