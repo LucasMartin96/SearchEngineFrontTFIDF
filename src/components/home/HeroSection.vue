@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import StatisticsCounter from './StatisticsCounter.vue'
 </script>
 
 <template>
@@ -20,9 +21,12 @@ import { RouterLink } from 'vue-router'
         <h1 class="text-5xl md:text-6xl font-bold mb-6 font-heading">
           Your Personal Speed-Reading Librarian 📚
         </h1>
-        <p class="text-xl md:text-2xl text-theme-secondary mb-8 font-body">
+        <p class="text-xl md:text-2xl text-theme-secondary mb-4 font-body">
           Search through classic books with the power of TF-IDF!
         </p>
+        
+        <StatisticsCounter class="mb-8" />
+
         <div 
           class="flex justify-center gap-4"
           v-motion
