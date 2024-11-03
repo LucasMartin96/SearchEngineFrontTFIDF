@@ -63,7 +63,6 @@ const handleSearch = async (page = 1) => {
       @search="handleSearch(1)"
     />
     
-    <!-- Error Message -->
     <div 
       v-if="error" 
       class="max-w-3xl mx-auto mb-8 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700"

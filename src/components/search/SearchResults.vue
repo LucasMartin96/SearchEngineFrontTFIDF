@@ -16,14 +16,12 @@ defineEmits<{
 
 <template>
   <div v-if="results?.items.length" class="max-w-4xl mx-auto space-y-6">
-    <!-- Results List -->
     <SearchResultCard
       v-for="result in results.items" 
       :key="result.documentId"
       :result="result"
     />
 
-    <!-- Pagination -->
     <Pagination
       :current-page="results.pageNumber"
       :total-pages="results.totalPages"
@@ -31,6 +29,5 @@ defineEmits<{
     />
   </div>
 
-  <!-- No Results State -->
   <NoResults v-else-if="!isLoading && results" />
 </template> 
