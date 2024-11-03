@@ -91,7 +91,7 @@ onMounted(() => fetchStats())
               :duration="2.8"
             />
           </span>
-          <span class="text-theme-secondary">mates drinked</span>
+          <span class="text-theme-secondary">mates consumed</span>
           <span class="animate-bounce">🧉</span>
         </div>
       </template>
