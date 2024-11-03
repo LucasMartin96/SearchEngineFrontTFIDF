@@ -4,23 +4,40 @@ defineProps<{
   totalPages: number
 }>()
 
-defineEmits<{
+const emit = defineEmits<{
   (e: 'change', page: number): void
 }>()
 </script>
 
 <template>
-  <div v-if="totalPages > 1" class="flex justify-center gap-2 mt-8">
+  <div class="flex justify-center gap-2">
+
     <button
-      v-for="page in totalPages"
-      :key="page"
-      @click="$emit('change', page)"
-      class="px-4 py-2 rounded-lg"
-      :class="page === currentPage 
-        ? 'bg-theme-secondary text-white' 
-        : 'bg-theme-background-secondary hover:bg-theme-secondary/10'"
+      class="btn btn-secondary"
+      :disabled="currentPage === 1"
+      @click="emit('change', currentPage - 1)"
     >
-      {{ page }}
+      Previous
+    </button>
+
+    <div class="flex gap-2">
+      <button
+        v-for="page in totalPages"
+        :key="page"
+        class="btn"
+        :class="page === currentPage ? 'btn-primary' : 'btn-secondary'"
+        @click="emit('change', page)"
+      >
+        {{ page }}
+      </button>
+    </div>
+
+    <button
+      class="btn btn-secondary"
+      :disabled="currentPage === totalPages"
+      @click="emit('change', currentPage + 1)"
+    >
+      Next
     </button>
   </div>
 </template> 
