@@ -19,3 +19,21 @@ export interface SearchResponse {
   pageSize: number
   totalPages: number
 }
+
+export interface Document {
+  id: string
+  title: string
+  path: string          // Gutenberg URL
+  wordCount: number
+  createdAt: string
+}
+
+export interface DocumentsResponse {
+  items: Document[]
+  pageNumber: number
+  pageSize: number
+  totalPages: number
+  totalCount: number
+  hasPreviousPage: boolean
+  hasNextPage: boolean
+}
