@@ -11,7 +11,7 @@ const toggleThemeMenu = () => {
 
 <template>
   <div class="relative">
-    <!-- Theme Button -->
+
     <button
       @click="toggleThemeMenu"
       class="fixed bottom-4 right-4 p-3 rounded-full shadow-lg bg-theme-secondary hover:bg-theme-accent transition-colors"
@@ -20,7 +20,6 @@ const toggleThemeMenu = () => {
       <span class="text-xl">{{ themeStore.themes[themeStore.currentTheme].icon }}</span>
     </button>
 
-    <!-- Theme Menu -->
     <div
       id="theme-menu"
       class="hidden fixed bottom-16 right-4 bg-theme-background rounded-lg shadow-xl p-2 w-48 border border-theme-background-secondary"
