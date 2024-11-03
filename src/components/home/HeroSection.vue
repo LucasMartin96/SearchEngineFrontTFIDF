@@ -5,7 +5,6 @@ import { RouterLink } from 'vue-router'
 <template>
   <section class="bg-theme-background-secondary py-20 overflow-hidden">
     <div class="container-custom relative">
-      <!-- Decorative circles -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none">
         <div class="absolute -top-40 -right-40 w-80 h-80 bg-theme-accent opacity-5 rounded-full"></div>
         <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-theme-secondary opacity-5 rounded-full"></div>

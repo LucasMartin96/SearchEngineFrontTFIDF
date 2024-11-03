@@ -39,7 +39,7 @@ const handleUpload = async () => {
 <template>
   <div class="container-custom py-8">
     <div class="max-w-2xl mx-auto">
-      <!-- Header -->
+
       <div class="text-center mb-12">
         <h1 class="text-4xl font-bold mb-4 font-heading">Upload New Book</h1>
         <p class="text-xl text-theme-secondary font-body">
@@ -47,14 +47,12 @@ const handleUpload = async () => {
         </p>
       </div>
 
-      <!-- Upload Form -->
       <UploadForm
         v-model:bookId="bookId"
         :is-processing="isProcessing"
         @submit="handleUpload"
       />
 
-      <!-- Processing Status -->
       <ProcessingStatus
         v-if="result"
         :document-id="result.documentId"

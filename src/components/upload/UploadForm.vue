@@ -47,7 +47,6 @@ const handleSubmit = () => {
 <template>
   <div class="bg-theme-background-secondary p-6 rounded-lg shadow-lg mb-8">
     <div class="space-y-4">
-      <!-- Input Field -->
       <div>
         <label for="bookId" class="block text-sm font-medium mb-2 text-theme-primary">
           Project Gutenberg Book ID
@@ -73,7 +72,6 @@ const handleSubmit = () => {
           :disabled="isProcessing"
         />
         
-        <!-- Error Message -->
         <p 
           v-if="error" 
           class="mt-2 text-sm text-red-500 flex items-center gap-1"
@@ -82,7 +80,6 @@ const handleSubmit = () => {
           {{ error }}
         </p>
         
-        <!-- Helper Text -->
         <p 
           v-else 
           class="mt-2 text-sm text-theme-secondary"
@@ -91,7 +88,6 @@ const handleSubmit = () => {
         </p>
       </div>
 
-      <!-- Submit Button -->
       <button
         @click="handleSubmit"
         class="btn btn-primary w-full justify-center"

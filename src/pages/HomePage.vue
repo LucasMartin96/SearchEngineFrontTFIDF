@@ -35,7 +35,6 @@ const features = [
   <div>
     <HeroSection />
     
-    <!-- Main Content -->
     <div class="container-custom py-16">
       <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         <FeatureCard

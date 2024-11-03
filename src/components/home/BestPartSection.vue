@@ -7,7 +7,6 @@
     :delay="400"
     :transition="{ duration: 300 }"
   >
-    <!-- Decorative elements -->
     <div class="absolute inset-0 pointer-events-none">
       <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-theme-secondary to-theme-accent opacity-50"></div>
     </div>
@@ -20,7 +19,6 @@
       No more copy-pasting stuff! And when you search, it gives you results ordered by how relevant they actually are, not just random matches.
     </p>
 
-    <!-- New Disclaimer Section -->
     <div 
       class="mb-8 p-4 bg-theme-accent/10 rounded-lg border border-theme-accent/20"
       v-motion
