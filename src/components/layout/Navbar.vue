@@ -1,97 +1,78 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
+import { useRoute } from 'vue-router'
 
+const route = useRoute()
 const isMenuOpen = ref(false)
+
+const navItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Search', path: '/search' },
+  { name: 'Books', path: '/books' },
+  { name: 'Upload', path: '/upload' }
+]
+
+const isActive = (path: string) => route.path === path
 </script>
 
 <template>
-  <nav class="bg-theme-navbar text-theme-primary">
+  <nav class="bg-[#1a1a1a] sticky top-0 z-50 shadow-md">
     <div class="container-custom">
       <div class="flex items-center justify-between h-16">
-        <!-- Enhanced Logo/Brand -->
-        <RouterLink to="/" class="group flex items-center gap-3">
-          <div class="flex items-center bg-theme-background/10 px-4 py-2 rounded-sm border border-theme-accent/20">
-            <span class="font-mono text-xl font-bold bg-gradient-to-r from-theme-secondary to-theme-accent bg-clip-text text-transparent">
-              TF-IDF
-            </span>
-            <span class="text-theme-accent/50 mx-2">//</span>
-            <span class="text-theme-secondary font-medium">
-              Search
-            </span>
-          </div>
+        <RouterLink 
+          to="/" 
+          class="font-heading flex items-center gap-2"
+        >
+          <span class="text-2xl">🧉</span>
+          <span class="text-lg font-semibold text-white">Mate & Manuscripts</span>
         </RouterLink>
 
-        <!-- Rest of navbar remains the same -->
-        <div class="hidden md:flex items-center space-x-4">
-          <RouterLink 
-            to="/" 
-            class="hover:text-theme-accent transition-colors"
+        <div class="hidden md:flex items-center space-x-8">
+          <RouterLink
+            v-for="item in navItems"
+            :key="item.path"
+            :to="item.path"
+            class="font-medium text-gray-300 hover:text-theme-accent transition-all relative py-1"
+            :class="{ '!text-theme-accent': isActive(item.path) }"
           >
-            Home
-          </RouterLink>
-          <RouterLink 
-            to="/search" 
-            class="hover:text-theme-accent transition-colors"
-          >
-            Search
-          </RouterLink>
-          <RouterLink 
-            to="/upload" 
-            class="hover:text-theme-accent transition-colors"
-          >
-            Upload Book
+            {{ item.name }}
           </RouterLink>
         </div>
-
-        <!-- Mobile menu button -->
         <button 
+          class="md:hidden text-gray-300"
           @click="isMenuOpen = !isMenuOpen"
-          class="md:hidden"
         >
           <svg 
-            class="w-6 h-6"
+            class="w-6 h-6" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
           >
             <path 
-              v-if="!isMenuOpen"
               stroke-linecap="round" 
               stroke-linejoin="round" 
               stroke-width="2" 
               d="M4 6h16M4 12h16M4 18h16"
             />
-            <path 
-              v-else
-              stroke-linecap="round" 
-              stroke-linejoin="round" 
-              stroke-width="2" 
-              d="M6 18L18 6M6 6l12 12"
-            />
           </svg>
         </button>
       </div>
 
-      <!-- Mobile menu -->
       <div 
         v-show="isMenuOpen"
-        class="md:hidden"
+        class="md:hidden pb-4"
       >
-        <div class="px-2 pt-2 pb-3 space-y-1">
-          <RouterLink
-            v-for="(link, index) in ['Home', 'Search', 'Upload Book']"
-            :key="index"
-            :to="link === 'Home' ? '/' : `/${link.toLowerCase().replace(' ', '')}`"
-            class="block px-3 py-2 rounded-md hover:text-theme-accent transition-colors"
-            @click="isMenuOpen = false"
-          >
-            {{ link }}
-          </RouterLink>
-        </div>
+        <RouterLink
+          v-for="item in navItems"
+          :key="item.path"
+          :to="item.path"
+          class="block py-2 text-gray-300 hover:text-theme-accent transition-colors"
+          :class="{ 'text-theme-accent': isActive(item.path) }"
+          @click="isMenuOpen = false"
+        >
+          {{ item.name }}
+        </RouterLink>
       </div>
     </div>
   </nav>
 </template>
-
-

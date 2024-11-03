@@ -5,6 +5,7 @@ import "vue-toastification/dist/index.css"
 import App from './App.vue'
 import router from './router'
 import './style.css'
+import { MotionPlugin } from '@vueuse/motion'
 
 const app = createApp(App)
 
@@ -24,5 +25,6 @@ app.use(Toast, {
   icon: true,
   rtl: false
 })
+app.use(MotionPlugin)
 
 app.mount('#app')
