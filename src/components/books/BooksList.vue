@@ -10,19 +10,17 @@ defineProps<{
 </script>
 
 <template>
-
-  <div v-if="isLoading" class="grid md:grid-cols-2 gap-8">
+  <div v-if="isLoading" class="max-w-3xl mx-auto space-y-6">
     <div 
-      v-for="i in 6" 
+      v-for="i in 4" 
       :key="i"
       class="bg-theme-background-secondary animate-pulse h-48 rounded-lg"
     />
   </div>
 
-
   <div 
     v-else-if="error"
-    class="text-center py-12 text-theme-secondary"
+    class="max-w-3xl mx-auto text-center py-12 text-theme-secondary"
   >
     <p class="text-xl font-body">
       😅 Oops! {{ error }}
@@ -31,7 +29,7 @@ defineProps<{
 
   <div 
     v-else-if="!books?.length"
-    class="text-center py-12 text-theme-secondary"
+    class="max-w-3xl mx-auto text-center py-12 text-theme-secondary"
   >
     <p class="text-xl font-body">
       📚 No books indexed yet! Try adding some books.
@@ -40,12 +38,13 @@ defineProps<{
 
   <div 
     v-else 
-    class="grid md:grid-cols-2 gap-8"
+    class="max-w-3xl mx-auto space-y-6"
   >
-    <BookCard
+    <div 
       v-for="book in books"
       :key="book.id"
-      :book="book"
-    />
+    >
+      <BookCard :book="book" />
+    </div>
   </div>
 </template> 

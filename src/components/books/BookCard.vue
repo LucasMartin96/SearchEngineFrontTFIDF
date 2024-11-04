@@ -21,28 +21,24 @@ const formatWordCount = (count: number) => {
 
 <template>
   <div 
-    class="bg-theme-background-secondary p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow group flex flex-col h-[280px]"
+    class="bg-theme-background-secondary p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
   >
-
-    <div class="flex-1 overflow-hidden">
-      <h2 class="text-2xl font-bold mb-4 font-heading line-clamp-2">
-        {{ book.title }}
-      </h2>
-      
-      <div class="space-y-2 text-theme-secondary font-body">
-        <p class="flex items-center gap-2">
-          <span>📝</span>
-          {{ formatWordCount(book.wordCount) }} words
-        </p>
-        <p class="flex items-center gap-2">
-          <span>📅</span>
-          Added {{ formatDate(book.createdAt) }}
-        </p>
-      </div>
-    </div>
+    <h2 class="text-xl font-bold mb-4 font-heading break-words">
+      {{ book.title }}
+    </h2>
     
+    <div class="space-y-2 text-theme-secondary font-body">
+      <p class="flex items-center gap-2">
+        <span>📝</span>
+        {{ formatWordCount(book.wordCount) }} words
+      </p>
+      <p class="flex items-center gap-2">
+        <span>📅</span>
+        Added {{ formatDate(book.createdAt) }}
+      </p>
+    </div>
 
-    <div class="mt-auto pt-4 border-t border-theme-background">
+    <div class="mt-4 pt-4 border-t border-theme-background">
       <GutenbergButton :path="book.path" />
     </div>
   </div>
