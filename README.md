@@ -26,7 +26,7 @@ A modern search interface for Project Gutenberg books using TF-IDF ranking.
 
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/yourusername/book-search.git](https://github.com/LucasMartin96/SearchEngineFrontTFIDF.git)
+   git clone https://github.com/LucasMartin96/SearchEngineFrontTFIDF.git
    ```
 
 2. **Install dependencies**
