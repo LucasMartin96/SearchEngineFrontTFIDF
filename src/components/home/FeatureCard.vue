@@ -1,10 +1,8 @@
 <script setup lang="ts">
-defineProps<{
-  title: string
-  emoji: string
-  content: string
-  delay: number
-}>()
+import { Feature } from "@types/feature"
+
+defineProps<Feature>();
+
 </script>
 
 <template>
