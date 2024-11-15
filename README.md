@@ -2,6 +2,10 @@
 
 A modern search interface for Project Gutenberg books using TF-IDF ranking.
 
+## Project Deployment
+
+The project is live! You can view it here: [https://searchenginefronttfidf.onrender.com/](https://searchenginefronttfidf.onrender.com/)
+
 ## Features
 - Fast and accurate book search using the TF-IDF algorithm
 - Clean, responsive UI with dark/light theme support
@@ -26,7 +30,7 @@ A modern search interface for Project Gutenberg books using TF-IDF ranking.
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/book-search.git
+   git clone https://github.com/LucasMartin96/SearchEngineFrontTFIDF.git
    ```
 
 2. **Install dependencies**
